@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D7868D6E52CCF1FC9881FCE /* libPods-MMSegmentControlDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEAED729816C3471895480C /* libPods-MMSegmentControlDemo.a */; };
+		E0999C13204D54BD002A514A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0999C12204D54BD002A514A /* AppDelegate.m */; };
+		E0999C16204D54BD002A514A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0999C15204D54BD002A514A /* ViewController.m */; };
+		E0999C19204D54BD002A514A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0999C17204D54BD002A514A /* Main.storyboard */; };
+		E0999C1B204D54BD002A514A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0999C1A204D54BD002A514A /* Assets.xcassets */; };
+		E0999C1E204D54BD002A514A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0999C1C204D54BD002A514A /* LaunchScreen.storyboard */; };
+		E0999C21204D54BD002A514A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0999C20204D54BD002A514A /* main.m */; };
+		E0999C2A204D5517002A514A /* MMSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0999C29204D5517002A514A /* MMSegmentControl.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B8D206267D7AF60AC1E9BFC /* Pods-MMSegmentControlDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMSegmentControlDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMSegmentControlDemo/Pods-MMSegmentControlDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7DEAED729816C3471895480C /* libPods-MMSegmentControlDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MMSegmentControlDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0999C0E204D54BD002A514A /* MMSegmentControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMSegmentControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0999C11204D54BD002A514A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E0999C12204D54BD002A514A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E0999C14204D54BD002A514A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E0999C15204D54BD002A514A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E0999C18204D54BD002A514A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0999C1A204D54BD002A514A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0999C1D204D54BD002A514A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E0999C1F204D54BD002A514A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0999C20204D54BD002A514A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E0999C28204D5517002A514A /* MMSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMSegmentControl.h; sourceTree = "<group>"; };
+		E0999C29204D5517002A514A /* MMSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMSegmentControl.m; sourceTree = "<group>"; };
+		FB14CFA064D8FAB430E5C84C /* Pods-MMSegmentControlDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMSegmentControlDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMSegmentControlDemo/Pods-MMSegmentControlDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0999C0B204D54BD002A514A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7868D6E52CCF1FC9881FCE /* libPods-MMSegmentControlDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		907BC252D1E8083DFB402BB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B8D206267D7AF60AC1E9BFC /* Pods-MMSegmentControlDemo.debug.xcconfig */,
+				FB14CFA064D8FAB430E5C84C /* Pods-MMSegmentControlDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ACC67FFCC00FA3FDDF107A7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DEAED729816C3471895480C /* libPods-MMSegmentControlDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0999C05204D54BD002A514A = {
+			isa = PBXGroup;
+			children = (
+				E0999C27204D54D1002A514A /* MMSegmentControl */,
+				E0999C10204D54BD002A514A /* MMSegmentControlDemo */,
+				E0999C0F204D54BD002A514A /* Products */,
+				907BC252D1E8083DFB402BB9 /* Pods */,
+				ACC67FFCC00FA3FDDF107A7A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E0999C0F204D54BD002A514A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0999C0E204D54BD002A514A /* MMSegmentControlDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0999C10204D54BD002A514A /* MMSegmentControlDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E0999C11204D54BD002A514A /* AppDelegate.h */,
+				E0999C12204D54BD002A514A /* AppDelegate.m */,
+				E0999C14204D54BD002A514A /* ViewController.h */,
+				E0999C15204D54BD002A514A /* ViewController.m */,
+				E0999C17204D54BD002A514A /* Main.storyboard */,
+				E0999C1A204D54BD002A514A /* Assets.xcassets */,
+				E0999C1C204D54BD002A514A /* LaunchScreen.storyboard */,
+				E0999C1F204D54BD002A514A /* Info.plist */,
+				E0999C20204D54BD002A514A /* main.m */,
+			);
+			path = MMSegmentControlDemo;
+			sourceTree = "<group>";
+		};
+		E0999C27204D54D1002A514A /* MMSegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				E0999C28204D5517002A514A /* MMSegmentControl.h */,
+				E0999C29204D5517002A514A /* MMSegmentControl.m */,
+			);
+			name = MMSegmentControl;
+			path = ../MMSegmentControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0999C0D204D54BD002A514A /* MMSegmentControlDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0999C24204D54BD002A514A /* Build configuration list for PBXNativeTarget "MMSegmentControlDemo" */;
+			buildPhases = (
+				49EE951F2BD43A85AE252F93 /* [CP] Check Pods Manifest.lock */,
+				E0999C0A204D54BD002A514A /* Sources */,
+				E0999C0B204D54BD002A514A /* Frameworks */,
+				E0999C0C204D54BD002A514A /* Resources */,
+				028B024C57F64DB08F34D0EC /* [CP] Embed Pods Frameworks */,
+				BAC794F951670377A6E9E381 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMSegmentControlDemo;
+			productName = MMSegmentControlDemo;
+			productReference = E0999C0E204D54BD002A514A /* MMSegmentControlDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0999C06204D54BD002A514A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = mille;
+				TargetAttributes = {
+					E0999C0D204D54BD002A514A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E0999C09204D54BD002A514A /* Build configuration list for PBXProject "MMSegmentControlDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0999C05204D54BD002A514A;
+			productRefGroup = E0999C0F204D54BD002A514A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0999C0D204D54BD002A514A /* MMSegmentControlDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0999C0C204D54BD002A514A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0999C1E204D54BD002A514A /* LaunchScreen.storyboard in Resources */,
+				E0999C1B204D54BD002A514A /* Assets.xcassets in Resources */,
+				E0999C19204D54BD002A514A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		028B024C57F64DB08F34D0EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMSegmentControlDemo/Pods-MMSegmentControlDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49EE951F2BD43A85AE252F93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MMSegmentControlDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAC794F951670377A6E9E381 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMSegmentControlDemo/Pods-MMSegmentControlDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0999C0A204D54BD002A514A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0999C16204D54BD002A514A /* ViewController.m in Sources */,
+				E0999C21204D54BD002A514A /* main.m in Sources */,
+				E0999C13204D54BD002A514A /* AppDelegate.m in Sources */,
+				E0999C2A204D5517002A514A /* MMSegmentControl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E0999C17204D54BD002A514A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0999C18204D54BD002A514A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E0999C1C204D54BD002A514A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0999C1D204D54BD002A514A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0999C22204D54BD002A514A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E0999C23204D54BD002A514A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0999C25204D54BD002A514A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B8D206267D7AF60AC1E9BFC /* Pods-MMSegmentControlDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MMSegmentControlDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mille.MMSegmentControlDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E0999C26204D54BD002A514A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB14CFA064D8FAB430E5C84C /* Pods-MMSegmentControlDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MMSegmentControlDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mille.MMSegmentControlDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0999C09204D54BD002A514A /* Build configuration list for PBXProject "MMSegmentControlDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0999C22204D54BD002A514A /* Debug */,
+				E0999C23204D54BD002A514A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0999C24204D54BD002A514A /* Build configuration list for PBXNativeTarget "MMSegmentControlDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0999C25204D54BD002A514A /* Debug */,
+				E0999C26204D54BD002A514A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0999C06204D54BD002A514A /* Project object */;
+}
