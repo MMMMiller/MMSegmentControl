@@ -10,7 +10,7 @@
 #import "MMSegmentControl.h"
 #import <Masonry.h>
 
-@interface ViewController ()
+@interface ViewController ()<MMSegmentControlDelegate>
 
 @end
 
@@ -30,20 +30,22 @@
     UIViewController *vc4 = [UIViewController new];
     vc4.view.backgroundColor = [UIColor redColor];
     
-    MMSegmentControl *control = [[MMSegmentControl alloc] initWithControllers:@[vc1, vc2, vc3, vc4] titles:@[@"标题1",@"标题2",@"标题3",@"标题4"]  firstIndex:2];
+    MMSegmentControl *control = [[MMSegmentControl alloc] initWithFrame:CGRectMake(0, 88, self.view.bounds.size.width, self.view.bounds.size.height - 88)
+                                                            controllers:@[vc1, vc2, vc3, vc4]
+                                                                 titles:@[@"标题1",@"标题2",@"标题3",@"标题4"]
+                                                             initIndex:2
+                                                             headHeight:40
+                                                           sgementWidth:200
+                                                           selectorSize:CGSizeMake(40, 5)
+                                                       selectorToBottom:2];
     
-    [self.view addSubview:control.view];
-    [control.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(88);
-        make.left.right.bottom.equalTo(self.view);
-    }];
-    
+    control.delegate = self;
     [self addChildViewController:control];
+    [self.view addSubview:control.view];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)segmentControl:(MMSegmentControl *)segmentControl viewDidAppearAtIndex:(NSUInteger)index {
+    NSLog(@"点了index ： %zd", index);
 }
 
 
