@@ -19,6 +19,10 @@
 
 @property (nonatomic, weak) id<MMSegmentControlDelegate> delegate;
 
+@property (nonatomic, strong) UIColor *selectedColor;
+
+@property (nonatomic, strong) UIColor *unSelectedColor;
+
 @property (nonatomic, strong) UIView *headView;
 
 @property (nonatomic, strong) UIView *segmentView;
@@ -41,5 +45,7 @@
                    headHeight:(CGFloat)headHeight
                  sgementWidth:(CGFloat)sgementWidth
                  selectorSize:(CGSize)selectorSize
-             selectorToBottom:(CGFloat)selectorToBottom;
+             selectorToBottom:(CGFloat)selectorToBottom
+                selectedColor:(UIColor *)selectedColor
+              unSelectedColor:(UIColor *)unSelectedColor;
 @end

@@ -12,16 +12,22 @@
 @interface MMSegmentBtn : UIButton
 
 + (instancetype)segmentBtnWithTitle:(NSString *)title
-                              index:(NSUInteger)index;
+                              index:(NSUInteger)index
+                      selectedColor:(UIColor *)selectedColor
+                    unSelectedColor:(UIColor *)unSelectedColor;
 
 @end
 
 @implementation MMSegmentBtn
 
-+ (instancetype)segmentBtnWithTitle:(NSString *)title index:(NSUInteger)index {
++ (instancetype)segmentBtnWithTitle:(NSString *)title
+                              index:(NSUInteger)index
+                      selectedColor:(UIColor *)selectedColor
+                    unSelectedColor:(UIColor *)unSelectedColor
+{
     MMSegmentBtn *button = [MMSegmentBtn buttonWithType:UIButtonTypeCustom];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithWhite:0.0 alpha:0.75] forState:UIControlStateSelected];
+    [button setTitleColor:unSelectedColor forState:UIControlStateNormal];
+    [button setTitleColor:selectedColor forState:UIControlStateSelected];
     [button setTitle:title forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont systemFontOfSize:14]];
     button.tag = index;
@@ -85,7 +91,9 @@
                     headHeight:40
                   sgementWidth:[UIScreen mainScreen].bounds.size.width
                   selectorSize:CGSizeMake(60, 2)
-              selectorToBottom:0];
+              selectorToBottom:0
+                 selectedColor:[UIColor blackColor]
+               unSelectedColor:[UIColor lightGrayColor]];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -96,6 +104,8 @@
                  sgementWidth:(CGFloat)sgementWidth
                  selectorSize:(CGSize)selectorSize
              selectorToBottom:(CGFloat)selectorToBottom
+                selectedColor:(UIColor *)selectedColor
+              unSelectedColor:(UIColor *)unSelectedColor
 {
     if (self = [super init]) {
         NSAssert(controller.count == title.count, @"controller & title not the same count");
@@ -106,7 +116,8 @@
         _headerViewSize = CGSizeMake(sgementWidth, headHeight);
         _selectorSize = selectorSize;
         _selectorToBottom = selectorToBottom;
-        
+        _selectedColor = selectedColor;
+        _unSelectedColor = unSelectedColor;
         self.controllers = [[NSMutableArray alloc] init];
         self.titles = [[NSMutableArray alloc] init];
         self.buttonArray = [[NSMutableArray alloc]init];
@@ -142,7 +153,10 @@
     CGFloat btnWidth = _headerViewSize.width / nums;
     for (int i = 0; i< nums; i++) {
         [self addChildViewController:_controllers[i]];
-        MMSegmentBtn *button = [MMSegmentBtn segmentBtnWithTitle:[self.titles objectAtIndex:i] index:i];
+        MMSegmentBtn *button = [MMSegmentBtn segmentBtnWithTitle:[self.titles objectAtIndex:i]
+                                                           index:i
+                                                   selectedColor:self.selectedColor
+                                                 unSelectedColor:self.unSelectedColor];
         [button addTarget:self action:@selector(clickedButton:) forControlEvents:UIControlEventTouchUpInside];
         [_segmentView addSubview:button];
         [self.buttonArray addObject:button];
@@ -160,7 +174,7 @@
     
     CGFloat xOffset = (_headerViewSize.width / self.titles.count - _selectorSize.width) / 2;
     self.selectorBar = [[UIView alloc] init];
-    self.selectorBar.backgroundColor = [UIColor yellowColor];
+    self.selectorBar.backgroundColor = self.selectedColor;
     [_segmentView addSubview:self.selectorBar];
     [_selectorBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(_selectorSize);
@@ -193,6 +207,21 @@
         make.left.right.bottom.equalTo(self.view);
         make.top.equalTo(self.view).offset(_headerViewSize.height);
     }];
+}
+
+- (void)setSelectedColor:(UIColor *)selectedColor {
+    _selectedColor = selectedColor;
+    _selectorBar.backgroundColor = selectedColor;
+    for (UIButton *btn in self.buttonArray) {
+        [btn setTitleColor:selectedColor forState:UIControlStateSelected];
+    }
+}
+
+- (void)setUnSelectedColor:(UIColor *)unSelectedColor {
+    _unSelectedColor = unSelectedColor;
+    for (UIButton *btn in self.buttonArray) {
+        [btn setTitleColor:unSelectedColor forState:UIControlStateNormal];
+    }
 }
 
 - (void)clickedButton:(id)sender {
