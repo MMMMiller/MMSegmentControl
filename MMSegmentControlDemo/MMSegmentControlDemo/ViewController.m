@@ -30,14 +30,17 @@
     UIViewController *vc4 = [UIViewController new];
     vc4.view.backgroundColor = [UIColor redColor];
     
-    MMSegmentControl *control = [[MMSegmentControl alloc] initWithFrame:CGRectMake(0, 88, self.view.bounds.size.width, self.view.bounds.size.height - 88)
+    CGRect frame = CGRectMake(0, 88, self.view.bounds.size.width, self.view.bounds.size.height - 88);
+    MMSegmentControl *control = [[MMSegmentControl alloc] initWithFrame:frame
                                                             controllers:@[vc1, vc2, vc3, vc4]
                                                                  titles:@[@"标题1",@"标题2",@"标题3",@"标题4"]
-                                                             initIndex:2
+                                                              initIndex:2
                                                              headHeight:40
                                                            sgementWidth:200
                                                            selectorSize:CGSizeMake(40, 5)
-                                                       selectorToBottom:2];
+                                                       selectorToBottom:2
+                                                          selectedColor:[UIColor blackColor]
+                                                        unSelectedColor:[UIColor darkGrayColor]];
     
     control.delegate = self;
     [self addChildViewController:control];
