@@ -37,7 +37,7 @@
 @property (nonatomic, strong) NSMutableArray *controllers;
 
 - (instancetype)initWithFrame:(CGRect)frame
-                  controllers:(NSArray<UIViewController<MMSegmentControlChildVCDelegate> *> *)controller
+                  controllers:(NSArray <id<MMSegmentControlChildVCDelegate>> *)controller
                        titles:(NSArray *)title
                      delegate:(UIViewController<MMSegmentControlDelegate> *)delegate
                     initIndex:(NSUInteger)firstIndex
