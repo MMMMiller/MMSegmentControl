@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MMSegmentControl.h"
+#import "BViewController.h"
 #import <Masonry.h>
 
 @interface ViewController ()<MMSegmentControlDelegate>
@@ -18,22 +19,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIViewController *vc1 = [UIViewController new];
+    BViewController *vc1 = [BViewController new];
     vc1.view.backgroundColor = [UIColor yellowColor];
     
-    UIViewController *vc2 = [UIViewController new];
+    BViewController *vc2 = [BViewController new];
     vc2.view.backgroundColor = [UIColor whiteColor];
     
-    UIViewController *vc3 = [UIViewController new];
+    BViewController *vc3 = [BViewController new];
     vc3.view.backgroundColor = [UIColor lightGrayColor];
     
-    UIViewController *vc4 = [UIViewController new];
+    BViewController *vc4 = [BViewController new];
     vc4.view.backgroundColor = [UIColor redColor];
     
     CGRect frame = CGRectMake(0, 88, self.view.bounds.size.width, self.view.bounds.size.height - 88);
     MMSegmentControl *control = [[MMSegmentControl alloc] initWithFrame:frame
                                                             controllers:@[vc1, vc2, vc3, vc4]
                                                                  titles:@[@"标题1",@"标题2",@"标题3",@"标题4"]
+                                                               delegate:self
                                                               initIndex:2
                                                              headHeight:40
                                                            sgementWidth:200
@@ -42,14 +44,10 @@
                                                           selectedColor:[UIColor blackColor]
                                                         unSelectedColor:[UIColor darkGrayColor]];
     
-    control.delegate = self;
-    [self addChildViewController:control];
-    [self.view addSubview:control.view];
+    [self.view addSubview:control];
 }
 
 - (void)segmentControl:(MMSegmentControl *)segmentControl viewDidAppearAtIndex:(NSUInteger)index {
-    NSLog(@"点了index ： %zd", index);
+    NSLog(@"index = %zd", index);
 }
-
-
 @end

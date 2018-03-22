@@ -37,6 +37,40 @@
 
 @end
 
+@interface MMSegmentCell : UICollectionViewCell
+
+@property (nonatomic, weak) UIViewController *vc;
+
+@end
+
+@implementation MMSegmentCell
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        
+    }
+    return self;
+}
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    NSArray *cellSubView = [self.contentView.subviews mutableCopy];
+    for (UIView *view in cellSubView) {
+        [view removeFromSuperview];
+    }
+}
+
+- (void)setVc:(UIViewController *)vc {
+    _vc = vc;
+
+    [self.contentView addSubview:vc.view];
+    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView);
+    }];
+}
+
+@end
+
 @interface MMSegmentControl () <UICollectionViewDataSource, UICollectionViewDelegate>{
     NSInteger _selectedIndex;
     NSUInteger _preIndex;
@@ -53,52 +87,23 @@
 
 @property (nonatomic, strong) NSMutableArray *buttonArray;
 
+@property (nonatomic, weak) UIViewController<MMSegmentControlDelegate> *delegate;
+
 @end
 
 @implementation MMSegmentControl
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    if (@available(iOS 11.0, *)) {
-        self.collectionView.contentInsetAdjustmentBehavior = NO;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    [super willMoveToSuperview:newSuperview];
     if (_firstIndex) {
         [self selectedButtonAtIndex:_firstIndex];
     }
 }
 
-- (instancetype)initWithControllers:(NSArray *)controller
-                             titles:(NSArray *)title
-{
-    return [self initWithControllers:controller titles:title initIndex:0];
-}
-
-- (instancetype)initWithControllers:(NSArray *)controller
-                             titles:(NSArray *)title
-                          initIndex:(NSUInteger)firstIndex
-{
-    return [self initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)
-                   controllers:controller
-                        titles:title
-                    initIndex:firstIndex
-                    headHeight:40
-                  sgementWidth:[UIScreen mainScreen].bounds.size.width
-                  selectorSize:CGSizeMake(60, 2)
-              selectorToBottom:0
-                 selectedColor:[UIColor blackColor]
-               unSelectedColor:[UIColor lightGrayColor]];
-}
-
 - (instancetype)initWithFrame:(CGRect)frame
                   controllers:(NSArray *)controller
                        titles:(NSArray *)title
+                     delegate:(UIViewController<MMSegmentControlDelegate> *)delegate
                     initIndex:(NSUInteger)firstIndex
                    headHeight:(CGFloat)headHeight
                  sgementWidth:(CGFloat)sgementWidth
@@ -109,7 +114,7 @@
 {
     if (self = [super init]) {
         NSAssert(controller.count == title.count, @"controller & title not the same count");
-        self.view.frame = frame;
+        self.frame = frame;
         
         _firstIndex = firstIndex;
         _preIndex = firstIndex;
@@ -118,6 +123,7 @@
         _selectorToBottom = selectorToBottom;
         _selectedColor = selectedColor;
         _unSelectedColor = unSelectedColor;
+        _delegate = delegate;
         self.controllers = [[NSMutableArray alloc] init];
         self.titles = [[NSMutableArray alloc] init];
         self.buttonArray = [[NSMutableArray alloc]init];
@@ -133,9 +139,9 @@
 - (void)setUpHeaderView {
     _headView = [[UIView alloc] init];
     _headView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_headView];
+    [self addSubview:_headView];
     [_headView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.top.width.equalTo(self.view);
+        make.centerX.top.width.equalTo(self);
         make.height.mas_equalTo(_headerViewSize.height);
     }];
     
@@ -152,7 +158,8 @@
     MMSegmentBtn *preBtn = nil;
     CGFloat btnWidth = _headerViewSize.width / nums;
     for (int i = 0; i< nums; i++) {
-        [self addChildViewController:_controllers[i]];
+        
+        [self.delegate addChildViewController:_controllers[i]];
         MMSegmentBtn *button = [MMSegmentBtn segmentBtnWithTitle:[self.titles objectAtIndex:i]
                                                            index:i
                                                    selectedColor:self.selectedColor
@@ -194,7 +201,7 @@
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
                                          collectionViewLayout:flowLayout];
     
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"controllers"];
+    [_collectionView registerClass:[MMSegmentCell class] forCellWithReuseIdentifier:@"kMMSegmentCellId"];
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.bounces = NO;
     _collectionView.showsHorizontalScrollIndicator = NO;
@@ -202,10 +209,10 @@
     _collectionView.pagingEnabled = YES;
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
-    [self.view addSubview:_collectionView];
+    [self addSubview:_collectionView];
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
-        make.top.equalTo(self.view).offset(_headerViewSize.height);
+        make.left.right.bottom.equalTo(self);
+        make.top.equalTo(self).offset(_headerViewSize.height);
     }];
 }
 
@@ -244,6 +251,11 @@
             if ([self.delegate respondsToSelector:@selector(segmentControl:viewDidAppearAtIndex:)]) {
                 [self.delegate segmentControl:self viewDidAppearAtIndex:_selectedIndex];
             }
+            
+            UIViewController<MMSegmentControlChildVCDelegate> *vc = self.controllers[_selectedIndex];
+            if ([vc respondsToSelector:@selector(viewInChildViewControllerWillAppear)]) {
+                [vc viewInChildViewControllerWillAppear];
+            }
         }
     });
 }
@@ -265,22 +277,15 @@
     return CGSizeMake(_collectionView.frame.size.width, _collectionView.frame.size.height);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"controllers" forIndexPath:indexPath];
+    MMSegmentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"kMMSegmentCellId" forIndexPath:indexPath];
     if ([[self.controllers objectAtIndex:indexPath.row] isKindOfClass:[UIViewController class]]) {
         UIViewController *controller = [self.controllers objectAtIndex:indexPath.row];
-        controller.view.tag = 10001;
-        NSArray *cellSubView = [cell.contentView.subviews mutableCopy];
-        for (UIView *view in cellSubView) {
-            if (view.tag == 10001) {
-               [view removeFromSuperview];
-            }
-        }
-        
-        [cell.contentView addSubview:controller.view];
-        [controller.view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(cell.contentView);
-        }];
+        cell.vc = controller;
     }
     return cell;
 }
@@ -303,8 +308,7 @@
     if([scrollView isKindOfClass:[UICollectionView class]]){
         CGFloat xoffset = scrollView.contentOffset.x;
         NSUInteger index = xoffset/[UIScreen mainScreen].bounds.size.width;
-        _selectedIndex = index;
-        [self buttonSelectAction:index];
+        [self selectedButtonAtIndex:index];
     }
 }
 

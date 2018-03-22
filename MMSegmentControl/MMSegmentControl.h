@@ -9,15 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @class MMSegmentControl;
+
 @protocol MMSegmentControlDelegate <NSObject>
 
 - (void)segmentControl:(MMSegmentControl *)segmentControl viewDidAppearAtIndex:(NSUInteger)index;
 
 @end
 
-@interface MMSegmentControl : UIViewController
+@protocol MMSegmentControlChildVCDelegate <NSObject>
 
-@property (nonatomic, weak) id<MMSegmentControlDelegate> delegate;
+- (void)viewInChildViewControllerWillAppear;
+
+@end
+
+@interface MMSegmentControl : UIView
 
 @property (nonatomic, strong) UIColor *selectedColor;
 
@@ -31,16 +36,10 @@
 
 @property (nonatomic, strong) NSMutableArray *controllers;
 
-- (instancetype)initWithControllers:(NSArray *)controller
-                             titles:(NSArray *)title;
-
-- (instancetype)initWithControllers:(NSArray *)controller
-                             titles:(NSArray *)title
-                          initIndex:(NSUInteger)initIndex;
-
 - (instancetype)initWithFrame:(CGRect)frame
-                  controllers:(NSArray *)controller
+                  controllers:(NSArray<UIViewController<MMSegmentControlChildVCDelegate> *> *)controller
                        titles:(NSArray *)title
+                     delegate:(UIViewController<MMSegmentControlDelegate> *)delegate
                     initIndex:(NSUInteger)firstIndex
                    headHeight:(CGFloat)headHeight
                  sgementWidth:(CGFloat)sgementWidth

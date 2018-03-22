@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D7868D6E52CCF1FC9881FCE /* libPods-MMSegmentControlDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEAED729816C3471895480C /* libPods-MMSegmentControlDemo.a */; };
+		E05B363520637EDC00D9C7F5 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05B363420637EDC00D9C7F5 /* BViewController.m */; };
 		E0999C13204D54BD002A514A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0999C12204D54BD002A514A /* AppDelegate.m */; };
 		E0999C16204D54BD002A514A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0999C15204D54BD002A514A /* ViewController.m */; };
 		E0999C19204D54BD002A514A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0999C17204D54BD002A514A /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		4B8D206267D7AF60AC1E9BFC /* Pods-MMSegmentControlDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMSegmentControlDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMSegmentControlDemo/Pods-MMSegmentControlDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7DEAED729816C3471895480C /* libPods-MMSegmentControlDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MMSegmentControlDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05B363320637EDC00D9C7F5 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		E05B363420637EDC00D9C7F5 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
 		E0999C0E204D54BD002A514A /* MMSegmentControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMSegmentControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0999C11204D54BD002A514A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0999C12204D54BD002A514A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				E0999C12204D54BD002A514A /* AppDelegate.m */,
 				E0999C14204D54BD002A514A /* ViewController.h */,
 				E0999C15204D54BD002A514A /* ViewController.m */,
+				E05B363320637EDC00D9C7F5 /* BViewController.h */,
+				E05B363420637EDC00D9C7F5 /* BViewController.m */,
 				E0999C17204D54BD002A514A /* Main.storyboard */,
 				E0999C1A204D54BD002A514A /* Assets.xcassets */,
 				E0999C1C204D54BD002A514A /* LaunchScreen.storyboard */,
@@ -237,6 +242,7 @@
 				E0999C16204D54BD002A514A /* ViewController.m in Sources */,
 				E0999C21204D54BD002A514A /* main.m in Sources */,
 				E0999C13204D54BD002A514A /* AppDelegate.m in Sources */,
+				E05B363520637EDC00D9C7F5 /* BViewController.m in Sources */,
 				E0999C2A204D5517002A514A /* MMSegmentControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
